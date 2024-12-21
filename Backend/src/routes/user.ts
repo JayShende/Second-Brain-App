@@ -202,7 +202,7 @@ userRouter.delete("/remove",authMiddleware,async(req,res)=>{
         }
         else{
             res.send({
-                msg:"Some Unknown Error on the delete endpoint"
+                msg:"Some Unknown Error on the delete endpoint okay"
             })
         }
     }
