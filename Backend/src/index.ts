@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import jwt from "jsonwebtoken";
 import {z} from "zod";
 import { Router } from "express";
+import cors from "cors";
 
 import {userRouter} from "./routes/user";
 
@@ -22,7 +23,7 @@ async function ConnectDB()
 ConnectDB();
 
 const app=express();
-
+app.use(cors());
 app.use(express.json());
 app.use("/api/v1",userRouter);
 

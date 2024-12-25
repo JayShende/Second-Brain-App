@@ -9,7 +9,7 @@ const userSchema = new Schema({
   username: { type: String, unique: true },
   password: String,
 });
-const contentTypes = ["image", "video", "article", "audio"]; // Extend as needed
+const contentTypes = ["youtube","twitter"]; // Extend as needed
 
 const contentSchema = new Schema({
   link: { type: String, required: true },
@@ -25,7 +25,8 @@ const tagsSchema = new Schema({
 
 const linkSchema = new Schema({
   hash: { type: String, required: true },
-  userId: { type: ObjectId, ref: "users", required: true },
+  userId: { type: ObjectId, ref: "users", required: true, unique:true },
+  // above we made the unique true since we want inly one link per user
 });
 
 
