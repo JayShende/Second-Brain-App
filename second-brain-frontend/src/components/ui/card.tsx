@@ -33,6 +33,7 @@ interface CardCompo {
   link: string;
   type: "twitter" | "youtube";
   contnetId: string;
+  shareDelete?:boolean;
 }
 
 export const CardComponenet = (prop: CardCompo) => {
@@ -64,7 +65,7 @@ export const CardComponenet = (prop: CardCompo) => {
         </div>
         <div className="flex justify-end">
           <CardShare link={prop.link} />
-          <DeleteBin onClick={deleteFunction} />
+          { prop.shareDelete&& <DeleteBin onClick={deleteFunction} />}
         </div>
       </div>
       <div className="px-4 h-auto">

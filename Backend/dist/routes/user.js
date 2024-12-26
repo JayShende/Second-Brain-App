@@ -216,6 +216,7 @@ userRouter.post("/brain/share", auth_1.authMiddleware, (req, res) => __awaiter(v
 }));
 userRouter.get("/brain/share/:shareLink", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const hash = req.params.shareLink;
+    console.log("req hit");
     // using the hash to find the userId
     const link = yield db_1.linkModel.findOne({
         hash: hash,

@@ -229,6 +229,7 @@ userRouter.post("/brain/share", authMiddleware, async (req, res) => {
 
 userRouter.get("/brain/share/:shareLink", async (req, res) => {
   const hash = req.params.shareLink;
+  console.log("req hit");
 
   // using the hash to find the userId
 

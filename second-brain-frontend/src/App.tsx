@@ -6,6 +6,7 @@ import { Signup } from "./pages/Signup";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import { BACKEND_URL } from "./config";
+import { SharePublic } from "./pages/SharePublic";
 function App()
 { 
   const [auth,setAuth]=useState(false);
@@ -21,7 +22,7 @@ function App()
      console.log(res.data);
     setAuth(res.data.status);
   }
-  verify();
+  // verify();
  
   console.log(auth);
   return(
@@ -34,6 +35,7 @@ function App()
           <Route path="/dashboard" element={  <DashBoard/>}/>
           <Route path="" element={<DefaultRouter/>}/>
           <Route path="*" element={auth? <DashBoard/> :<Signup/>}/>
+          <Route path="/share/:shareLink" element={<SharePublic/>}/>
 
         </Routes>
       </BrowserRouter>
